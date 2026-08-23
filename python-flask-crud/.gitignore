@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*.db
+.env
+.venv/
+venv/
+.vscode/
+.idea/
+.pytest_cache/
+.mypy_cache/
+instance/
+migrations/

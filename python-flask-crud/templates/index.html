@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flask CRUD</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Items</h1>
+        <p>Flask + PostgreSQL CRUD application</p>
+    </header>
+
+    <section class="card">
+
+        <h2 id="form-title">Create Item</h2>
+
+        <form id="item-form">
+
+            <input
+                type="hidden"
+                id="item-id"
+            >
+
+            <div class="form-group">
+                <label for="name">Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    maxlength="200"
+                    placeholder="Item name"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+
+                <textarea
+                    id="description"
+                    name="description"
+                    placeholder="Item description"
+                ></textarea>
+            </div>
+
+            <div class="buttons">
+
+                <button type="submit" class="primary">
+                    Save
+                </button>
+
+                <button
+                    type="button"
+                    id="cancel-button"
+                    class="secondary hidden"
+                >
+                    Cancel
+                </button>
+
+            </div>
+
+        </form>
+
+        <div id="message"></div>
+
+    </section>
+
+    <section class="card">
+
+        <div class="list-header">
+            <h2>Items</h2>
+
+            <button
+                type="button"
+                onclick="loadItems()"
+                class="secondary"
+            >
+                Refresh
+            </button>
+        </div>
+
+        <div id="items-container">
+            Loading...
+        </div>
+
+    </section>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+</html>
