@@ -1,6 +1,6 @@
 def binary_search(data: str, lookup: str) -> None:
-    print(f"Searching for {lookup} in {data}")
-    print("-------------------------------------------")
+    print(f"Searching for {lookup} in {data}\n")
+    
     lower: int = 0
     upper: int = len(data)
     is_found: bool = False
